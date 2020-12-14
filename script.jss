@@ -19,6 +19,18 @@ if(canvas.getContext){
     ctx.lineWidth=6
     ctx.strokeStyle='rgb(255,0,255)'
     ctx.stroke()
+    
+    // Hour marks
+    ctx.save()
+    for (i=0 ; i<= 12; i++){
+        ctx.beginPath()
+        ctx.rotate(Math.PI/6.0)
+        ctx.moveTo( radius-5, 0)
+        ctx.lineTo (radius+10,0)
+        ctx.strokeStyle='rgb(0,255,255)'
+        ctx.stroke()
+    }
+    ctx.restore()
 }
 
 setInterval(drawDial, 1000)
